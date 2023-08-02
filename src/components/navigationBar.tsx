@@ -17,6 +17,7 @@ const NavigationSection = (props: NavigationItem) => {
 const NavigationBar = () => {
   return (
     <nav>
+      <p className="logo">🥘 HomeChefRecipes</p>
       <ul>
         <NavigationSection href="/" text="Home" />
         <NavigationSection href="/login" text="Login" />

@@ -22,6 +22,7 @@ const Homepage = () => {
   return (
     <>
       <NavigationBar />
+      <div className="hero"></div>
       {recipeState.map((aRecipeInfo) => {
         return (
           <div>
@@ -32,14 +33,18 @@ const Homepage = () => {
               alt="photo of a dish"
             />
             <h1>{aRecipeInfo.name}</h1>
-            <StarRating rating={aRecipeInfo.recipeRating} />
+            <StarRating
+              height={23}
+              width={23}
+              rating={aRecipeInfo.recipeRating}
+            />
             <div>
               <p>Prep Time</p>
               <p>{aRecipeInfo.prepTime}</p>
             </div>
             <div>
               <p>Serves</p>
-              <ServeIcon serves={aRecipeInfo.serves} />
+              <ServeIcon height={19} width={15} serves={aRecipeInfo.serves} />
             </div>
           </div>
         );
