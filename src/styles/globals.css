@@ -1,22 +1,59 @@
 .heroHome {
   background-image: url("/bg-homepage-hero.png");
+  height: 60vh;
+  border-radius: 0 0 50px 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.hero-header {
+  width: 20%;
+  padding-left: 100px;
 }
 
+.hero-header h1 {
+  color: #0D0D0D;
+  font-family: Young Serif;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 .navBar {
   display: flex;
   justify-content: space-between;
+  align-content: center;
   align-items: center;
+  background: #FEBD2F;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 25px;
 }
 
 .navLinks {
   text-decoration: none;
+}
+
+.display-inline {
   display: inline-block;
 }
 
-.homepage-content {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 30px;
+.login-link-container {
+  border-radius: 300px;
+  background: #FFF;
+  margin-left: 50px;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.container-main {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
@@ -24,8 +61,21 @@
   margin-bottom: 30px;
 }
 
+.homepage-content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 30px;
+}
+
 .recipe-body-heading {
   grid-column: span 2;
+  color: #0D0D0D;
+  font-family: Young Serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .recipe-cards-home {
   grid-column: span 8;
@@ -35,17 +85,37 @@
 }
 
 .recipe-card {
+  display: flex;
   grid-column: span 4;
   background: #FFF;
   border: 1px solid var(--border);
   border-radius: 30px;
   box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.10);
+  width: 100%;
+  height: 30vh;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #FFF;
+  box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.10);
+}
+.recipe-image {
+  object-fit: cover;
+  width: 50%;
+  height: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
 /* search bar Homepage */
 .search-bar-home {
   position: relative;
   grid-column: span 8;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  border: 1px solid #A1AAA6;
+  display: flex;
+  align-items: center;
 }
 
 .search-icon {
@@ -59,4 +129,95 @@
 
 .add-recipe {
   grid-column: span 10;
+}
+
+/* recipe category buttons */
+.category-button {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 100px;
+  border: 1px solid #A1AAA6;
+  background: #F5F3EF;
+  grid-column: span 2;
+  display: block;
+  height: 5vh;
+}
+
+.category-buttons-section {
+  grid-column: span 2;
+}
+.category-buttons-section button.clicked {
+  background-color: #FEBD2F;
+}
+
+.looking-glass-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.add-recipe-button {
+  grid-column: span 10;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius:30px;
+  display: flex;
+  color: #0D0D0D;
+  text-align: center;
+  font-family: Young Serif;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-image: url("/bg-homepage-button-new-recipe.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 470px;
+}
+
+.recipe-name-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #0D0D0D;
+  font-family: Helvetica Neue;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 33px;
+  margin-bottom: 2px;
+}
+
+.category-button-emoji {
+  background-color: #FFF;
+}
+
+.recipe-name-rating {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 90%;
+}
+
+.preptime-serves-section {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 30%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.display-block {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.recipe-main-info {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  flex-direction: column;
 }
