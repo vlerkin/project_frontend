@@ -22,33 +22,59 @@ const Homepage = () => {
   return (
     <>
       <NavigationBar />
-      <div className="hero"></div>
-      {recipeState.map((aRecipeInfo) => {
-        return (
-          <div>
-            <Image
-              width={338}
-              height={329}
-              src={aRecipeInfo.imgUrl}
-              alt="photo of a dish"
-            />
-            <h1>{aRecipeInfo.name}</h1>
-            <StarRating
-              height={23}
-              width={23}
-              rating={aRecipeInfo.recipeRating}
-            />
-            <div>
-              <p>Prep Time</p>
-              <p>{aRecipeInfo.prepTime}</p>
-            </div>
-            <div>
-              <p>Serves</p>
-              <ServeIcon height={19} width={15} serves={aRecipeInfo.serves} />
-            </div>
-          </div>
-        );
-      })}
+      <div className="heroHome">
+        <h1>Home Chef Recipes</h1>
+      </div>
+      <body className="homepage-content">
+        <h2 className="recipe-body-heading">Recipes</h2>
+        <div className="search-bar-home">
+          <Image
+            src="/SearchIcon.png"
+            alt="search icon"
+            width={27}
+            height={27}
+            className="search-icon"
+          />
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search For Recipes..."
+          />
+        </div>
+        <div className="recipe-cards-home">
+          {recipeState.map((aRecipeInfo) => {
+            return (
+              <div className="recipe-card">
+                <Image
+                  width={338}
+                  height={329}
+                  src={aRecipeInfo.imgUrl}
+                  alt="photo of a dish"
+                />
+                <h1>{aRecipeInfo.name}</h1>
+                <StarRating
+                  height={23}
+                  width={23}
+                  rating={aRecipeInfo.recipeRating}
+                />
+                <div>
+                  <p>Prep Time</p>
+                  <p>{aRecipeInfo.prepTime}</p>
+                </div>
+                <div>
+                  <p>Serves</p>
+                  <ServeIcon
+                    height={19}
+                    width={15}
+                    serves={aRecipeInfo.serves}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <button className="add-recipe">Add New Recipe</button>
+      </body>
     </>
   );
 };

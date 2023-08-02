@@ -8,7 +8,7 @@ const NavigationSection = (props: NavigationItem) => {
   const href = props.href;
   const text = props.text;
   return (
-    <li>
+    <li className="navLinks">
       <Link href={href}>{text}</Link>
     </li>
   );
@@ -16,8 +16,8 @@ const NavigationSection = (props: NavigationItem) => {
 
 const NavigationBar = () => {
   return (
-    <nav>
-      <p className="logo">🥘 HomeChefRecipes</p>
+    <nav className="navBar">
+      <span className="logo">🥘 HomeChefRecipes</span>
       <ul>
         <NavigationSection href="/" text="Home" />
         <NavigationSection href="/login" text="Login" />
