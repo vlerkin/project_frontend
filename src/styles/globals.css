@@ -60,3 +60,107 @@
 .add-recipe {
   grid-column: span 10;
 }
+/* WHITE FORM FOR COMMENT */
+.whiteFormForComment {
+  width: 990px;
+height: 481px;
+flex-shrink: 0;
+border-radius: 30px;
+background: #FFF;
+box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.10);
+}
+
+.userName {
+  display: flex;
+width: 511px;
+height: 51px;
+padding: 16px;
+align-items: center;
+gap: 2px;
+border-radius: 10px;
+border: 1px solid rgba(13, 13, 13, 0.25);
+background: #FFF;
+}
+
+.reviewField {
+
+}
+
+/* RATING STARS IN THE FORM FOR ADDING COMMENTS */
+.rating {
+  margin: 50px auto;
+  width: 400px;
+}
+.rating > * {
+  float: right;
+}
+@keyframes pulse {
+  50% {
+    color: #5e5e5e;
+    text-shadow: 0 0 15px #777;
+  }
+}
+.rating label {
+  height: 40px;
+  width: 20%;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.rating label:nth-of-type(5):after {
+  animation-delay: 0.25s;
+}
+.rating label:nth-of-type(4):after {
+  animation-delay: 0.2s;
+}
+.rating label:nth-of-type(3):after {
+  animation-delay: 0.15s;
+}
+.rating label:nth-of-type(2):after {
+  animation-delay: 0.1s;
+}
+.rating label:nth-of-type(1):after {
+  animation-delay: 0.05s;
+}
+.rating label:after {
+  transition: all 0.4s ease-out;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  content: "☆";
+  color: #444;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 80px;
+  animation: 1s pulse ease;
+}
+.rating label:hover:after {
+  color: #5e5e5e;
+  text-shadow: 0 0 15px #5e5e5e;
+}
+.rating input {
+  display: none;
+}
+.rating input:checked + label:after, .rating input:checked ~ label:after {
+  content: "★";
+  color: #f9bf3b;
+  text-shadow: 0 0 20px #f9bf3b;
+}
+
+/* SAVE BUTTON IN THE COMMENT FORM */
+.saveButton {
+  background-color: #FEBD2F;
+  width: 174px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 300px;
+  color: #000;
+  text-align: center;
+  font-family: Young Serif;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
