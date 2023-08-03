@@ -1,13 +1,9 @@
-interface Category {
-  categoryName: RecipeCategory;
-}
-
 export interface AllRecipes {
   name: string;
   prepTime: number;
   imgUrl: string;
   serves: number;
-  categories: Category[];
+  categories: RecipeCategory[];
   recipeRating: number;
 }
 

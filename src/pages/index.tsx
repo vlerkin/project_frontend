@@ -19,11 +19,6 @@ const Homepage = () => {
   if (!recipeState) {
     return <p>Loading...</p>;
   }
-  const clickSetFilter = (aCategory: RecipeCategory | "all") => {
-    document.getElementById(filterState)?.classList.remove("clicked");
-    document.getElementById(aCategory)?.classList.add("clicked");
-    setFilterState(aCategory);
-  };
   const emojiCategory = {
     breakfast: "🍳",
     lunch: "🥯",
@@ -39,7 +34,7 @@ const Homepage = () => {
 
   return (
     <>
-      <NavigationBar />
+      <NavigationBar background={true} />
       <div className="heroHome">
         <div className="hero-header">
           <h1>Home Chef Recipes</h1>
@@ -73,8 +68,10 @@ const Homepage = () => {
           <div className="category-buttons-section">
             <button
               id="all"
-              className="clicked category-button"
-              onClick={() => clickSetFilter("all")}
+              className={`category-button ${
+                "all" === filterState ? "clicked" : ""
+              }`}
+              onClick={() => setFilterState("all")}
             >
               <span className="category-button-emoji">🍴</span>
               all
@@ -83,8 +80,10 @@ const Homepage = () => {
               return (
                 <button
                   id={aCategory}
-                  className="category-button"
-                  onClick={() => clickSetFilter(aCategory)}
+                  className={`category-button ${
+                    aCategory == filterState ? "clicked" : ""
+                  } `}
+                  onClick={() => setFilterState(aCategory)}
                 >
                   <span className="category-button-emoji">
                     {emojiCategory[aCategory]}
@@ -98,8 +97,8 @@ const Homepage = () => {
             {recipeState
               .filter(
                 (aRecipe) =>
-                  aRecipe["categories"].includes(filterState) ||
-                  filterState === "all"
+                  filterState === "all" ||
+                  aRecipe["categories"].includes(filterState)
               )
               .map((aRecipeInfo) => {
                 return (
@@ -124,7 +123,7 @@ const Homepage = () => {
                         <div>
                           <span className="display-block">Prep Time</span>
                           <span className="display-block">
-                            {aRecipeInfo.prepTime}
+                            {aRecipeInfo.prepTime + "m"}
                           </span>
                         </div>
                         <div>
