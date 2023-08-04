@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .heroHome {
   background-image: url("/bg-homepage-hero.png");
 }
@@ -36,10 +40,10 @@
 
 .recipe-card {
   grid-column: span 4;
-  background: #FFF;
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: 30px;
-  box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* search bar Homepage */
@@ -49,7 +53,7 @@
 }
 
 .search-icon {
-  position:absolute;
+  position: absolute;
   left: 0px;
 }
 
@@ -60,37 +64,133 @@
 .add-recipe {
   grid-column: span 10;
 }
-/* WHITE FORM FOR COMMENT */
-.whiteFormForComment {
-  width: 990px;
-height: 481px;
-flex-shrink: 0;
-border-radius: 30px;
-background: #FFF;
-box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.10);
+
+/* MAIN CONTEINER FOR COMMENT SECTION*/
+.mainBigContainerForComment {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 30px;
 }
 
-.userName {
+/* HEADER BEFORE COMMENT FORM*/
+.headerForCommentForm {
   display: flex;
-width: 511px;
-height: 51px;
-padding: 16px;
-align-items: center;
-gap: 2px;
-border-radius: 10px;
-border: 1px solid rgba(13, 13, 13, 0.25);
-background: #FFF;
+  flex-direction: column;
+  justify-content: center;
+
+  flex-shrink: 0;
+  color: #0d0d0d;
+  text-align: center;
+  font-family: Young Serif;
+  font-size: 130%;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  grid-column: span 10;
+  margin-bottom: -2%;
 }
 
-.reviewField {
+.whiteFormForComment {
+  /* GRID INSIDE OUR WHITE FORM */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+}
 
+/* WHITE FORM FOR COMMENT */
+.comment-container {
+  flex-shrink: 0;
+  padding: 10%;
+  /* margin: 5%; */
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.1);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  /* grid-column: span 6; */
+  /* GRID CSS FOR THE PARENT GRID */
+  grid-column-start: 3;
+  grid-column-end: 9;
+}
+
+.name-container {
+  grid-column: span 4;
+}
+
+.userName-input {
+  width: 100%;
+  display: flex;
+  padding: 16px;
+  margin-bottom: 1%;
+  align-items: center;
+  gap: 2px;
+  border-radius: 10px;
+  border: 1px solid rgba(13, 13, 13, 0.25);
+  background: #fff;
+}
+.userName-label {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 1%;
+}
+
+.review-container {
+  grid-column: span 6;
+}
+
+.reviewField-input {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  padding: 16px;
+  margin-bottom: 5%;
+  align-items: center;
+  gap: 2px;
+  border-radius: 10px;
+  border: 1px solid rgba(13, 13, 13, 0.25);
+  background: #fff;
+  grid-column: span 6;
+}
+
+.reviewField-label {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 1%;
+  grid-column: span 6;
 }
 
 /* RATING STARS IN THE FORM FOR ADDING COMMENTS */
-.rating {
-  margin: 50px auto;
-  width: 400px;
+.rating-container {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
 }
+
+.nameForRating {
+  grid-column: span 2;
+  float: right;
+}
+
+/*.rating {
+  height: 65px;
+  width: 50%;
+}*/
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 12px;
+  margin-top: 12px;
+  flex-direction: row-reverse;
+}
+
 .rating > * {
   float: right;
 }
@@ -102,7 +202,7 @@ background: #FFF;
 }
 .rating label {
   height: 40px;
-  width: 20%;
+  width: 5%;
   display: block;
   position: relative;
   cursor: pointer;
@@ -133,7 +233,7 @@ background: #FFF;
   width: 100%;
   height: 100%;
   text-align: center;
-  font-size: 80px;
+  font-size: 20px;
   animation: 1s pulse ease;
 }
 .rating label:hover:after {
@@ -143,7 +243,8 @@ background: #FFF;
 .rating input {
   display: none;
 }
-.rating input:checked + label:after, .rating input:checked ~ label:after {
+.rating input:checked + label:after,
+.rating input:checked ~ label:after {
   content: "★";
   color: #f9bf3b;
   text-shadow: 0 0 20px #f9bf3b;
@@ -151,16 +252,18 @@ background: #FFF;
 
 /* SAVE BUTTON IN THE COMMENT FORM */
 .saveButton {
-  background-color: #FEBD2F;
+  background-color: #febd2f;
   width: 174px;
   height: 56px;
   flex-shrink: 0;
   border-radius: 300px;
+  border-color: none;
   color: #000;
   text-align: center;
   font-family: Young Serif;
-font-size: 24px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  grid-column: span 6;
 }
