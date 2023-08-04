@@ -3,25 +3,34 @@ import Link from "next/link";
 interface NavigationItem {
   text: string;
   href: string;
+  background?: boolean;
 }
-const NavigationSection = (props: NavigationItem) => {
+
+interface NavigationBarProps {
+  background?: boolean;
+}
+const NavigationButton = (props: NavigationItem) => {
   const href = props.href;
   const text = props.text;
+  const background = props.background;
   return (
-    <li className="navLinks">
-      <Link href={href}>{text}</Link>
-    </li>
+    <Link
+      className={`navLinks ${background ? "navLinkBackground" : ""}`}
+      href={href}
+    >
+      {text}
+    </Link>
   );
 };
 
-const NavigationBar = () => {
+const NavigationBar = (props: NavigationBarProps) => {
   return (
-    <nav className="navBar">
+    <nav className={`navBar ${props.background ? "nav-bar-background" : ""}`}>
       <span className="logo">🥘 HomeChefRecipes</span>
-      <ul>
-        <NavigationSection href="/" text="Home" />
-        <NavigationSection href="/login" text="Login" />
-      </ul>
+      <div className="navigation-links-container">
+        <NavigationButton href="/" text="Home" />
+        <NavigationButton background={true} href="/login" text="Login" />
+      </div>
     </nav>
   );
 };
