@@ -102,8 +102,8 @@ const AddRecipe = () => {
     ) {
       return false;
     }
+    router.push("/");
   };
-  const handleAddSaveClick = () => {};
   return (
     <>
       <div className="hero-addrecipe">
