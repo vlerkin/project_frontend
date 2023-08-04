@@ -276,8 +276,26 @@
   background-position: center;
   background-repeat: no-repeat;
   color: white
+}
 
+.black-opacity {
+  position: absolute;
+  left:  0px;
+  top: 0px;
+  background-color: #0D0D0D;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  opacity: 50%;
+}
 
+.recipe-geheral-info {
+  position: relative;
+
+}
+
+.recipe-h1 {
+  position: relative;
 }
 .recipe-instructions-card {
 width: 80%;
@@ -288,6 +306,9 @@ background: #FFF;
 box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.10);
 display: row;
 padding:3rem;
+margin-top: -50px;
+z-index: 10;
+position: relative;
 
 
 }
