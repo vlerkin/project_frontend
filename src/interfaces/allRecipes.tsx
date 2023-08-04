@@ -1,4 +1,5 @@
 export interface AllRecipes {
+  id: number;
   name: string;
   prepTime: number;
   imgUrl: string;
@@ -8,3 +9,7 @@ export interface AllRecipes {
 }
 
 export type RecipeCategory = "breakfast" | "lunch" | "dinner" | "dessert";
+
+export interface CategoryItem {
+  categoryName: string;
+}

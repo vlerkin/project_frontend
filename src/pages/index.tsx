@@ -5,10 +5,12 @@ import NavigationBar from "@/components/navigationBar";
 import StarRating from "@/components/starRating";
 import ServeIcon from "@/components/servesIcon";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Homepage = () => {
   const [recipeState, setRecipeState] = useState<AllRecipes[] | null>(null);
   const [filterState, setFilterState] = useState<RecipeCategory | "all">("all");
+  const router = useRouter();
   useEffect(() => {
     const getRecipesFromApi = async () => {
       const response = await axios.get("http://127.0.0.1:3001/");
@@ -31,7 +33,10 @@ const Homepage = () => {
     "lunch",
     "dessert",
   ];
-
+  const handleAddRecipeClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    router.push("/addrecipe");
+  };
   return (
     <>
       <NavigationBar background={true} />
@@ -120,14 +125,18 @@ const Homepage = () => {
                         />
                       </div>
                       <div className="preptime-serves-section">
-                        <div>
-                          <span className="display-block">Prep Time</span>
+                        <div className="home-preptime-container">
+                          <span className="display-block home-serveprep-padding">
+                            Prep Time
+                          </span>
                           <span className="display-block">
                             {aRecipeInfo.prepTime + "m"}
                           </span>
                         </div>
-                        <div>
-                          <span className="display-block">Serves</span>
+                        <div className="home-serves-container">
+                          <span className="display-block home-serveprep-padding">
+                            Serves
+                          </span>
                           <ServeIcon
                             height={19}
                             width={15}
@@ -140,7 +149,7 @@ const Homepage = () => {
                 );
               })}
           </div>
-          <button className="add-recipe-button">
+          <button className="add-recipe-button" onClick={handleAddRecipeClick}>
             Add
             <br />
             New
