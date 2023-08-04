@@ -1,3 +1,4 @@
+import AddComments from "@/components/addComments";
 import NavigationBar from "@/components/navigationBar";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -19,29 +20,35 @@ interface Recipe {
 
 const RecipeInfo = () => {
   const router = useRouter();
-  const recipeIdFromUrl = router.query.recipeId;
+  const recipeId = Number(router.query.recipeId);
+
 
   const [recipe, setRecipe] = useState<Recipe | null>(null);
 
   useEffect(() => {
-    if (recipeIdFromUrl === undefined) {
+
+    if (recipeId === undefined || isNaN(recipeId)) {
+
       // The first time this runs this value will be `undefined` because the router has not been created yet
       // In that can we just exit the useEffect with an early return.
       return;
     }
+
+    console.log(recipeId);
     const getRecipeFromApi = async () => {
       const recipe = await axios.get(
-        `http://127.0.0.1:3001/recipes/${recipeIdFromUrl}`
+        `http://127.0.0.1:3001/recipes/${recipeId}`
       );
       setRecipe(recipe.data);
     };
 
     getRecipeFromApi();
-  }, [recipeIdFromUrl]);
+  }, [recipeId]);
 
-  if (!recipe) {
+  if (!recipe || isNaN(recipeId)) {
     return <div>Loading ...</div>;
   }
+  
   const ingredientsList = recipe.ingredients.split(",");
   const instructionsList = recipe.instructions.split(".");
   instructionsList.pop();
@@ -97,15 +104,10 @@ const RecipeInfo = () => {
           </div>
         </div>
       </div>
+       <AddComments recipeId={recipeId} />
     </div>
   );
 };
 
-const SeparateRecipePage = () => (
-  <div>
-    <NavigationBar background={true} />
-    <RecipeInfo />
-  </div>
-);
 
-export default SeparateRecipePage;
+export default RecipeInfo;
