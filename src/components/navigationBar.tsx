@@ -8,6 +8,7 @@ interface NavigationItem {
 
 interface NavigationBarProps {
   background?: boolean;
+  roundEdges?: boolean;
 }
 const NavigationButton = (props: NavigationItem) => {
   const href = props.href;
@@ -25,7 +26,11 @@ const NavigationButton = (props: NavigationItem) => {
 
 const NavigationBar = (props: NavigationBarProps) => {
   return (
-    <nav className={`navBar ${props.background ? "nav-bar-background" : ""}`}>
+    <nav
+      className={`navBar ${props.background ? "nav-bar-background" : ""} ${
+        props.roundEdges ? "roundEdges" : ""
+      }`}
+    >
       <span className="logo">🥘 HomeChefRecipes</span>
       <div className="navigation-links-container">
         <NavigationButton href="/" text="Home" />

@@ -22,13 +22,10 @@ const RecipeInfo = () => {
   const router = useRouter();
   const recipeId = Number(router.query.recipeId);
 
-
   const [recipe, setRecipe] = useState<Recipe | null>(null);
 
   useEffect(() => {
-
     if (recipeId === undefined || isNaN(recipeId)) {
-
       // The first time this runs this value will be `undefined` because the router has not been created yet
       // In that can we just exit the useEffect with an early return.
       return;
@@ -48,7 +45,7 @@ const RecipeInfo = () => {
   if (!recipe || isNaN(recipeId)) {
     return <div>Loading ...</div>;
   }
-  
+
   const ingredientsList = recipe.ingredients.split(",");
   const instructionsList = recipe.instructions.split(".");
   instructionsList.pop();
@@ -61,11 +58,11 @@ const RecipeInfo = () => {
         title={recipe.name}
         style={{
           backgroundImage: `url(${recipe.imgUrl})`,
-          overflow: "hidden",
-          position: "relative",
         }}
       >
-        {" "}
+        <div className="nav-bar-personal-recipe-page">
+          <NavigationBar background={true} roundEdges={true} />{" "}
+        </div>
         <div className="black-opacity"></div>
         <div className="recipe-general-info">
           <h1 className="recipe-h1">{recipe.name}</h1>
@@ -104,10 +101,9 @@ const RecipeInfo = () => {
           </div>
         </div>
       </div>
-       <AddComments recipeId={recipeId} />
+      <AddComments recipeId={recipeId} />
     </div>
   );
 };
-
 
 export default RecipeInfo;
