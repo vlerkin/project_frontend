@@ -585,12 +585,38 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white
-
-
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-family: Young Serif; 
+  border-radius: 0rem 0rem 3.125rem 3.125rem;
 }
+
+.black-opacity {
+  position: absolute;
+  left:  0px;
+  top: 0px;
+  background-color: #0D0D0D;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  opacity: 50%;
+}
+
+.recipe-general-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-size: 2rem;
+  font-family: Young Serif; 
+}
+
+
 .recipe-instructions-card {
-width: 80%;
+width: 60%;
 margin: auto;
 padding: auto;
 border-radius: 30px;
@@ -598,6 +624,9 @@ background: #FFF;
 box-shadow: 0px 7px 24px 0px rgba(0, 0, 0, 0.10);
 display: row;
 padding:3rem;
+margin-top: -50px;
+z-index: 10;
+position: relative;
 }
 
 .recipe-card-header {
@@ -608,24 +637,43 @@ padding:3rem;
   justify-content: space-between;
 }
 
+.recipe-card-h2 {
+  font-family: Helvetica Neue;
+  font-size: 2.5rem;
+  font-style: normal; 
+  vertical-align: middle;
+}
+
 .servesInfo {
   display: flex;
   flex-direction: row;
+  color:#a1aaa6;
+  row-gap: 50px;
+}
+
+.prep-time-text {
+  color: black;
 }
 
 .recipe-content {
   display: flex;
   flex-direction: row;
-  font-family: Helvetica Neue; 
+  font-family: Helvetica Neue;
+
+  justify-content: space-between;
+  align-content: space-between;
+
 }
 
 .ingredients {
   display: flex;
   flex-direction: column;
+  margin: 2%;
 }
 
 .instructions {
   display: flex;
   flex-direction: column;
+  margin: 2%;
 }
 
