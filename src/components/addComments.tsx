@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
 
 interface AddCommentsProps {
   recipeId: number;
@@ -21,6 +22,10 @@ const AddComments = (props: AddCommentsProps) => {
         recipeId: props.recipeId,
       }
     );
+
+    if (response.data.message === "Comment created!") {
+      toast("Comment Created!");
+    }
   };
 
   return (
@@ -28,6 +33,7 @@ const AddComments = (props: AddCommentsProps) => {
       <div className="headerForCommentForm">
         <h1>Add a Comment</h1>
       </div>
+      <Toaster />
 
       <form onSubmit={handleFormSubmit} className="comment-container">
         <div className="whiteFormForComment">
