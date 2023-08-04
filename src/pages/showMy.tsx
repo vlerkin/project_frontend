@@ -83,7 +83,9 @@ const showMy = () => {
                     </div>
                     <div className="dashboard-card-recipe-preptime">
                       <span>Prep Time</span>
-                      <span>{aRecipe.prepTime + "m"}</span>
+                      <span className="dashboard-time">
+                        {aRecipe.prepTime + "m"}
+                      </span>
                     </div>
                   </div>
                 </div>

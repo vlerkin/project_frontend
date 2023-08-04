@@ -102,7 +102,7 @@ const AddRecipe = () => {
     ) {
       return false;
     }
-    router.push("/");
+    router.push("/showMy");
   };
   return (
     <>

@@ -422,8 +422,13 @@
   align-items: center;
 }
 .dashboard-serves-word {
-  padding-bottom: 2px;
+  padding-bottom: 3px;
 }
+
+.dashboard-time {
+  padding-left: 3px;
+}
+
 .dashboard-recipe-image {
   object-fit: cover;
   border-top-left-radius: 20px;

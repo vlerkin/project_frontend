@@ -1,5 +1,5 @@
 import { AllRecipes, RecipeCategory } from "@/interfaces/allRecipes";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NavigationBar from "@/components/navigationBar";
 import StarRating from "@/components/starRating";
@@ -33,6 +33,9 @@ const Homepage = () => {
     "lunch",
     "dessert",
   ];
+  const handleRecipeCardClick = (id: number) => {
+    router.push(`/recipes/${id}`);
+  };
   const handleAddRecipeClick = (event: React.MouseEvent) => {
     event.preventDefault();
     router.push("/addrecipe");
@@ -107,7 +110,10 @@ const Homepage = () => {
               )
               .map((aRecipeInfo) => {
                 return (
-                  <div className="recipe-card">
+                  <div
+                    className="recipe-card"
+                    onClick={() => handleRecipeCardClick(aRecipeInfo.id)}
+                  >
                     <Image
                       className="recipe-image"
                       width={338}
