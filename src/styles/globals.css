@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -548,7 +549,136 @@
   flex-direction: column;
   padding-top: 10px;
 }
+/* --------- SHOW - MY - PAGE ---------- */
 
+.dashboard-hero-section {
+  background-image: url("/bg-dashboard.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  width: 100%;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.dashboard-header {
+  height: 100%;
+  margin: 13% 30%;
+  color: #0D0D0D;
+  text-align: center;
+  font-family: Young Serif;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.dashboard-main-section {
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  background: #F5F3EF;
+}
+
+.dashboard-hero-section-template {
+  background: #F5F3EF;
+}
+
+.dashboard-recipe-cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  width: 120vh;
+  margin-top: -60px;
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.dashboard-recipe-card {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.dashboard-card-recipe-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  padding-left: 20px;
+}
+
+.dashboard-rating-preptime-serves {
+  display: flex;
+  justify-content:space-between;
+  width: 80%;
+  align-items: center;
+}
+.dashboard-serves-word {
+  padding-bottom: 2px;
+}
+.dashboard-recipe-image {
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  max-height: 140px; 
+}
+
+.dashboeard-serves-icons {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.dashboard-button-container {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding-right: 3%;
+}
+
+.dashboard-button-container button {
+  border-radius: 5px;
+  border: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.dashboard-edit-button {
+  background: #FEBD2F;
+  color: #000;
+  text-align: center;
+  font-family: Young Serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.dashboard-delete-button {
+  background: #0D0D0D;
+  color: #FFF;
+  text-align: center;
+  font-family: Young Serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 
 /* --------- LOGIN PAGE STYLING --------- */
 
@@ -639,7 +769,7 @@
   font-family: Young Serif;
   font-size: 85px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
   margin: 15% auto 30px auto;
 }
